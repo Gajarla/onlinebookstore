@@ -37,8 +37,8 @@ public class AddBookServlet extends HttpServlet {
         rd.include(req, res);
         StoreUtil.setActiveTab(pw, "addbook");
         pw.println("<div class='container my-2'>");
-        if(bName == null || bName.isBlank()) {
-            //render the add book form;
+        if (bName == null || bName.trim().isEmpty()) {
+          //render the add book form;
             showAddBookForm(pw);
             return;
         } //else process the add book
