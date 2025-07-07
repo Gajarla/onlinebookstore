@@ -21,17 +21,17 @@ pipeline {
             }
         }
 
-        stage("Debug Target Folder") {
+        stage("Debug Workspace") {
             steps {
-                echo "📂 Listing target folder"
-                sh 'ls -R target'
+                echo "🧭 Listing all files in workspace"
+                sh 'find . -type f'
             }
         }
 
         stage("Archive Artifacts") {
             steps {
-                echo "📦 Archiving build outputs"
-                archiveArtifacts artifacts: '**/target/**/*.jar', fingerprint: true
+                echo "📦 Trying to archive all JARs"
+                archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             }
         }
     }
