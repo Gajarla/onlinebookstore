@@ -31,7 +31,7 @@ pipeline {
         stage("Archive Artifacts") {
             steps {
                 echo "📦 Archiving build outputs"
-                archiveArtifacts artifacts: 'target/**/*.jar', fingerprint: true
+                archiveArtifacts artifacts: '**/target/**/*.jar', fingerprint: true
             }
         }
     }
